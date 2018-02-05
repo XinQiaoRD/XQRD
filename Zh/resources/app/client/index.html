@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<!--终端框架结构 ; verson 1.2.0 ; verson-data 2015-12-18-->
+<html>
+<head lang="cn">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>互动多媒体系统</title>
+
+    <link rel="stylesheet" href="css/inc.css">
+    <link rel="stylesheet" href="lib/swiper/dist/css/swiper.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/person.css">
+    <link rel="stylesheet" href="css/word.css">
+    
+</head>
+
+<body ondragstart="return false" onselect="return false" onselectstart="return false" oncontextmenu="return false">
+<div id="CC" style="transform:scale(0.9); transform-origin: top left;">
+<!-- style="transform:scale(0.5); transform-origin: top left;" -->
+    <div id="_unable"></div>
+
+    <section class="cc" id="Loader">
+        <img src="../../assets/img/loader.svg" width="88" alt="">
+        <div class="word"></div>
+    </section>
+
+    <section class="cc" id="Index">
+
+        <img class="logo" src="img/tit.png" alt="">
+        <div class="Head"></div>
+
+        <div class="map">
+            <img class="map_act map_act1" src="../../assets/img/map/1.png" alt="">
+            <img class="map_act map_act2" src="../../assets/img/map/2.png" alt="">
+            <img class="map_act map_act3" src="../../assets/img/map/3.png" alt="">
+            <img class="map_act map_act4" src="../../assets/img/map/4.png" alt="">
+            <img class="map_act map_act5" src="../../assets/img/map/5.png" alt="">
+            <img class="map_act map_act6" src="../../assets/img/map/6.png" alt="">
+            <img class="map_act map_act7" src="../../assets/img/map/7.png" alt="">
+            <img class="map_act map_act8" src="../../assets/img/map/8.png" alt="">
+            <img class="map_pot" src="../../assets/img/map/pot.png" alt="">
+        </div>
+        <div class="map_btn">
+            <div class="btn1 btn1_1"></div>
+            <div class="btn1 btn1_2"></div>
+            <div class="btn1 btn1_3"></div>
+            <div class="btn1 btn1_4"></div>
+            <div class="btn1 btn1_5"></div>
+            <div class="btn1 btn1_6"></div>
+
+            <div class="btn2 btn2_1"></div>
+            <div class="btn2 btn2_2"></div>
+            <div class="btn2 btn2_3"></div>
+            <div class="btn2 btn2_4"></div>
+
+            <div class="btn3 btn3_1"></div>
+            <div class="btn3 btn3_2"></div>
+            <div class="btn3 btn3_3"></div>
+            <div class="btn3 btn3_4"></div>
+            <div class="btn3 btn3_5"></div>
+            <div class="btn3 btn3_6"></div>
+            <div class="btn3 btn3_7"></div>
+            <div class="btn3 btn3_8"></div>
+
+            <div class="btn4 btn4_1"></div>
+            <div class="btn4 btn4_2"></div>
+            <div class="btn4 btn4_3"></div>
+            <div class="btn4 btn4_4"></div>
+
+            <div class="btn5 btn5_1"></div>
+            <div class="btn5 btn5_2"></div>
+            <div class="btn5 btn5_3"></div>
+            <div class="btn5 btn5_4"></div>
+
+            <div class="btn6 btn6_1"></div>
+            <div class="btn6 btn6_2"></div>
+
+            <div class="btn7 btn7_1"></div>
+            <div class="btn7 btn7_2"></div>
+
+            <div class="btn8 btn8_1"></div>
+            <div class="btn8 btn8_2"></div>
+            <div class="btn8 btn8_3"></div>
+
+        </div>
+
+        <div class="com">
+            <div class="tit"></div>
+            <ul class="cs c1"></ul>
+            <ul class="cs c2"></ul>
+            <ul class="cs c3"></ul>
+            <ul class="cs c4"></ul>
+            <ul class="cs c5"></ul>
+            <ul class="cs c6"></ul>
+            <ul class="cs c7"></ul>
+            <ul class="cs c8"></ul>
+        </div>
+
+        <div class="person">
+            <div class="tit">第八选区</div>
+            <div class="num">选民数：7002</div>
+            <div class="box">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <ul class="pp pp1"></ul>
+                            <ul class="pp pp2"></ul>
+                            <ul class="pp pp3"></ul>
+                            <ul class="pp pp4"></ul>
+                            <ul class="pp pp5"></ul>
+                            <ul class="pp pp6"></ul>
+                            <ul class="pp pp7"></ul>
+                            <ul class="pp pp8"></ul>
+                        </div>
+                    </div>
+                    <!-- Add Scroll Bar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="link"></div>
+
+    </section>
+
+    <script type="text/template" id="View_Person">
+        <section class="cc Person" id="Person{$id}">
+            <div class="bgx" data-id="{$id}"></div>
+            <div class="box">
+                <div class="header">
+                    <div class="nm">{$nm}&nbsp;&nbsp;<span>{$sex} &nbsp;{$age}岁</span></div>
+                    <div class="area">{$area_cn} （选民{$area_num}人）</div>
+
+                    <div class="p_info">
+                        <div class="line">
+                            <div class="tit">党派：</div>
+                            <div class="info">{$party}</div>
+                            <div class="tit kk">参加工作时间：</div>
+                            <div class="info">{$work_time}</div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="line">
+                            <div class="tit">民族：</div>
+                            <div class="info">{$nation}</div>
+                            <div class="tit kk">学历：</div>
+                            <div class="info">{$edu}</div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="line">
+                            <div class="tit">工作单位及职务：</div>
+                            <div class="infos">{$work}</div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="line">
+                            <div class="tit">联系方式：</div>
+                            <div class="info">{$tel}</div>
+                            <div class="tit kk">户籍所在地：</div>
+                            <div class="info">{$addr}</div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="photo">
+                        <img src="../../uploads/person/{$photo}" width="192" alt="">
+                    </div>
+
+                </div>
+
+                <div class="left">
+                    <div class="left_bg"></div>
+                    <div class="menu menu1"></div>
+                    <div class="menu menu2"></div>
+                    <div class="menu menu3"></div>
+                    <div class="menu menu4"></div>
+                    <div class="pot pot1"></div>
+                    <div class="pot pot2"></div>
+                    <div class="pot pot3"></div>
+                    <div class="pot pot4"></div>
+                </div>
+
+                <div class="cls" data-id="{$id}"></div>
+            </div>
+        </section>
+    </script>
+
+
+    <script type="text/template" id="View_Word">
+        <section class="cc Word" id="Word{$id}">
+            <div class="bgx" data-id="{$id}"></div>
+            <div class="box">
+                <div class="title">{$nm}：{$title}</div>
+                <div class="left">
+                    <div class="act act1"></div>
+                    <div class="act act2"></div>
+                    <div class="act act3"></div>
+                    <div class="left_bg"></div>
+
+                    <img src="../../uploads/person/{$photo}" alt="" class="photo">
+
+                    <div class="btn btn1" data-id="{$id}"></div>
+                    <div class="btn btn2" data-id="{$id}"></div>
+                    <div class="btn btn3" data-id="{$id}"></div>
+                </div>
+
+                <div class="main content">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="tit">李秀红代表：</div>
+                                <div class="m_info">{$word_info}</div>
+                            </div>
+                        </div>
+                        <!-- Add Scroll Bar -->
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+
+                <div class="main back">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="tit">{$back_tit}</div>
+                                <div class="m_info">{$back_info}</div>
+                            </div>
+                        </div>
+                        <!-- Add Scroll Bar -->
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+
+                <div class="main news">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="tit">{$news_tit}</div>
+                                <div class="m_info">{$news_info}</div>
+                            </div>
+                        </div>
+                        <!-- Add Scroll Bar -->
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+
+                <div class="cls" data-id="{$id}"></div>
+            </div>
+        </section>
+    </script>
+
+
+    <script type="text/template" id="View_index_person">
+        <li class="_person" data-id="{$id}">
+            <div class="head">
+                <img width="150" src="../../uploads/person/20180204103732424.jpg" alt="">
+            </div>
+            <div class="nm">{$nm}</div>
+        </li>
+    </script>
+
+</div>
+
+</body>
+
+<!--基础插件-->
+<script>window.$ = window.jQuery = require('jquery');</script>
+<script src="lib/underscore.js"></script>
+<script src="lib/velocity/velocity.js"></script>
+
+<script src="lib/swiper/dist/js/swiper.js"></script>
+
+<script src="lib/zh.js"></script>
+<!--主程序-->
+<script src="../../assets/config.js"></script>
+<script src="js/init.js"></script>
+<script src="js/server.js"></script>
+<!--<script src="js/mp3.js"></script>-->
+
+<!--模块程序-->
+<script src="js/index.js"></script>
+<script src="js/person.js"></script>
+<script src="js/word.js"></script>
+
+<script>
+    $(window).load(()=>init.loader());
+    document.getElementById("CC").addEventListener('touchmove', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+    });
+</script>
+
+</html>
