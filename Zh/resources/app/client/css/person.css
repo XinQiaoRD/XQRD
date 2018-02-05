@@ -100,85 +100,53 @@
     background: url("../../../assets/img/person/left.png") no-repeat;
 }
 
-/*.Word .box .title{*/
-    /*position: absolute;*/
-    /*width: 1398px; height: 146px;*/
-    /*left: 100px; top: 0px;*/
+.Person .left .menu{
+    position: absolute;
+    width: 90px; height: 30px;
+    left: 90px;
+    line-height: 30px; text-align: right;
+    font-size: 20px; color: #6f573e;
+}
+.Person .left .menu.act{
+    color: #dc5750;
+}
+.Person .left .menu1{ top:30px }
+.Person .left .menu2{ top:110px }
+.Person .left .menu3{ top:190px }
+.Person .left .menu4{ top:270px }
 
-    /*font-size: 44px; color: #6f573e;*/
-    /*text-align: left;*/
+.Person .left .pot{
+    position: absolute;
+    left: 216px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background-color: #dc5750;
+    display: none;
+}
+.Person .left .pot1{ top:40px; display: block }
+.Person .left .pot2{ top:118px }
+.Person .left .pot3{ top:198px }
+.Person .left .pot4{ top:277px }
 
-    /*display: flex;*/
-    /*align-items: center;*/
-/*}*/
+/*main*/
+.Person .main{
+    position: absolute;
+    width: 1205px; height: 620px;
+    left:300px; top: 320px;
+    overflow: hidden;
+}
 
-/*.Word .box .left{*/
-    /*position: absolute;*/
-    /*width: 200px; height: 766px;*/
-    /*left: 100px; top: 156px;*/
-    /*overflow: hidden;*/
-/*}*/
-/*.Word .box .left .left_bg{*/
-    /*position: absolute;*/
-    /*width: 200px; height: 766px;*/
-    /*left: 0px; top: 0px;*/
-    /*background: url("../../../assets/img/word/left.png") no-repeat;*/
-/*}*/
-/*.Word .box .left .photo{*/
-    /*position: absolute;*/
-    /*left: 4px; top: 4px;*/
-    /*width: 192px; height: 192px;*/
-/*}*/
-/*.Word .box .left .act{*/
-    /*position: absolute;*/
-    /*width: 200px; height: 55px;*/
-    /*left: 0px; background-color: #d6cdb9;*/
-/*}*/
-/*.Word .box .left .act1{ top: 251px}*/
-/*.Word .box .left .act2{ top: 336px}*/
-/*.Word .box .left .act3{ top: 422px}*/
-
-/*.Word .box .left .btn{*/
-    /*position: absolute;*/
-    /*width: 200px; height: 55px;*/
-    /*left: 0px;*/
-/*}*/
-/*.Word .box .left .btn1{ top: 251px}*/
-/*.Word .box .left .btn2{ top: 336px}*/
-/*.Word .box .left .btn3{ top: 422px}*/
-
+.Person .swiper-container {
+    height: 100%;
+}
+.Person .swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 50px;
+}
 
 
-/*.Word .main{*/
-    /*position: absolute;*/
-    /*width: 1148px; height: 785px;*/
-    /*left: 352px; top: 155px;*/
-/*}*/
 
-/*.Word .main .tit {*/
-    /*font-size: 32px; color: #dc5750;*/
-    /*text-align: center;*/
-    /*margin-bottom: 42px;*/
-/*}*/
-/*.Word .main.content .tit{*/
-    /*font-size: 18px; color: #6f573e;*/
-    /*text-align: left;*/
-    /*margin-bottom: 22px;*/
-/*}*/
-/*.Word .main .m_info{*/
-    /*font-size: 18px; color: #6f573e;*/
-    /*width: 100%;*/
-    /*line-height: 42px;*/
-    /*text-align: left;*/
-/*}*/
 
-/*.Word .swiper-container {*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-/*}*/
-/*.Word .swiper-slide {*/
-    /*height: auto;*/
-    /*-webkit-box-sizing: border-box;*/
-    /*box-sizing: border-box;*/
-    /*padding-right: 50px;*/
-/*}*/
+

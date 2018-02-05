@@ -55,10 +55,6 @@ init.index_person = ()=>{
             },
             mousewheel: true,
         });
-
-        // Dom.Index_person.on('progress', function(progress){
-        //     console.log(Math.abs(Dom.Index_person_h*progress));
-        // })
     }, 100)
 };
 
@@ -91,43 +87,133 @@ init.person = ()=>{
         $CC.append(Person_cc);
     }
 
+    Dom.PersonSwiper = {};
+    Dom.PersonMain = {};
     setTimeout(()=>{
         $(".Person").show();
 
-        // Dom.Word_content = {};
-        // Dom.Word_back = {};
-        // Dom.Word_news = {};
-        // for(let i in word){
-        //     Dom.Word_content["Word"+i] = new Swiper('#Word'+i+' .content .swiper-container', {
-        //         direction: 'vertical',
-        //         slidesPerView: 'auto',
-        //         freeMode: true,
-        //         scrollbar: {
-        //             el: '#Word'+i+' .content .swiper-scrollbar',
-        //         },
-        //         mousewheel: true,
-        //     });
-        //
-        //     Dom.Word_back["Word"+i] = new Swiper('#Word'+i+' .back .swiper-container', {
-        //         direction: 'vertical',
-        //         slidesPerView: 'auto',
-        //         freeMode: true,
-        //         scrollbar: {
-        //             el: '#Word'+i+' .back .swiper-scrollbar',
-        //         },
-        //         mousewheel: true,
-        //     });
-        //
-        //     Dom.Word_news["Word"+i] = new Swiper('#Word'+i+' .news .swiper-container', {
-        //         direction: 'vertical',
-        //         slidesPerView: 'auto',
-        //         freeMode: true,
-        //         scrollbar: {
-        //             el: '#Word'+i+' .news .swiper-scrollbar',
-        //         },
-        //         mousewheel: true,
-        //     });
-        // }
+        for(let i in person){
+            Dom.PersonMain[i] = {};
+            Dom.PersonMain[i].m = $('#Person'+i+' .main');
+            Dom.PersonMain[i].ps1 = Dom.PersonMain[i].m.find(".ps1");
+            Dom.PersonMain[i].ps2 = Dom.PersonMain[i].m.find(".ps2");
+            Dom.PersonMain[i].ps3 = Dom.PersonMain[i].m.find(".ps3");
+            Dom.PersonMain[i].ps4 = Dom.PersonMain[i].m.find(".ps4");
+
+            Dom.PersonMain[i].menu = $('#Person'+i+' .left .menu');
+            Dom.PersonMain[i].menu1 = $('#Person'+i+' .left .menu1');
+            Dom.PersonMain[i].menu2 = $('#Person'+i+' .left .menu2');
+            Dom.PersonMain[i].menu3 = $('#Person'+i+' .left .menu3');
+            Dom.PersonMain[i].menu4 = $('#Person'+i+' .left .menu4');
+
+            Dom.PersonMain[i].pot = $('#Person'+i+' .left .pot');
+            Dom.PersonMain[i].pot1 = $('#Person'+i+' .left .pot1');
+            Dom.PersonMain[i].pot2 = $('#Person'+i+' .left .pot2');
+            Dom.PersonMain[i].pot3 = $('#Person'+i+' .left .pot3');
+            Dom.PersonMain[i].pot4 = $('#Person'+i+' .left .pot4');
+
+            Dom.PersonMain[i].t1 = Dom.PersonMain[i].ps1.offset().top;
+            Dom.PersonMain[i].t2 = Dom.PersonMain[i].ps2.offset().top;
+            Dom.PersonMain[i].t3 = Dom.PersonMain[i].ps3.offset().top;
+            Dom.PersonMain[i].t4 = Dom.PersonMain[i].ps4.offset().top;
+
+            Dom.PersonMain[i].h1 = Dom.PersonMain[i].ps1.height();
+            Dom.PersonMain[i].h2 = Dom.PersonMain[i].ps2.height();
+            Dom.PersonMain[i].h3 = Dom.PersonMain[i].ps3.height();
+            Dom.PersonMain[i].h4 = Dom.PersonMain[i].ps4.height();
+
+            Dom.PersonSwiper[i] = new Swiper('#Person'+i+' .main .swiper-container', {
+                direction: 'vertical',
+                slidesPerView: 'auto',
+                freeMode: true,
+                // scrollbar: {
+                //     el: '#Person'+i+' .main .swiper-scrollbar',
+                // },
+                mousewheel: true,
+            });
+
+            Dom.PersonMain[i].menu1.click(function(){
+                let id = $(this).data("id");
+                Dom.PersonSwiper[id].setTransition(500);
+                Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t1- Dom.PersonMain[i].h1 - 10));
+
+                Dom.PersonMain[id].menu.removeClass("act");
+                Dom.PersonMain[id].menu1.addClass("act");
+
+                Dom.PersonMain[id].pot.hide();
+                Dom.PersonMain[id].pot1.show();
+            });
+            Dom.PersonMain[i].menu2.click(function(){
+                let id = $(this).data("id");
+                Dom.PersonSwiper[id].setTransition(500);
+                Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t2- Dom.PersonMain[i].h2 - 10));
+
+                Dom.PersonMain[id].menu.removeClass("act");
+                Dom.PersonMain[id].menu2.addClass("act");
+
+                Dom.PersonMain[id].pot.hide();
+                Dom.PersonMain[id].pot2.show();
+            });
+            Dom.PersonMain[i].menu3.click(function(){
+                let id = $(this).data("id");
+                Dom.PersonSwiper[id].setTransition(500);
+                Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t3- Dom.PersonMain[i].h3 - 10));
+
+                Dom.PersonMain[id].menu.removeClass("act");
+                Dom.PersonMain[id].menu3.addClass("act");
+
+                Dom.PersonMain[id].pot.hide();
+                Dom.PersonMain[id].pot3.show();
+            });
+            Dom.PersonMain[i].menu4.click(function(){
+                let id = $(this).data("id");
+                Dom.PersonSwiper[id].setTransition(500);
+                Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t4- Dom.PersonMain[i].h4 - 10));
+
+                Dom.PersonMain[id].menu.removeClass("act");
+                Dom.PersonMain[id].menu4.addClass("act");
+
+                Dom.PersonMain[id].pot.hide();
+                Dom.PersonMain[id].pot4.show();
+            });
+
+            Dom.PersonSwiper[i].on('progress', function(progress){
+                let x = 418;
+                let y = 80;
+                let top1 = parseInt( Dom.PersonMain[i].ps1.offset().top - Dom.PersonMain[i].h1 - y );
+                let top2 = parseInt( Dom.PersonMain[i].ps2.offset().top - Dom.PersonMain[i].h2 - y );
+                let top3 = parseInt( Dom.PersonMain[i].ps3.offset().top - Dom.PersonMain[i].h3 - y );
+                let top4 = parseInt( Dom.PersonMain[i].ps4.offset().top - Dom.PersonMain[i].h4 - y );
+
+                if(top4<=0){
+                    Dom.PersonMain[i].menu.removeClass("act");
+                    Dom.PersonMain[i].menu4.addClass("act");
+
+                    Dom.PersonMain[i].pot.hide();
+                    Dom.PersonMain[i].pot4.show();
+                }else if(top3<=0){
+                    Dom.PersonMain[i].menu.removeClass("act");
+                    Dom.PersonMain[i].menu3.addClass("act");
+
+                    Dom.PersonMain[i].pot.hide();
+                    Dom.PersonMain[i].pot3.show();
+                }else if(top2<=0){
+                    Dom.PersonMain[i].menu.removeClass("act");
+                    Dom.PersonMain[i].menu2.addClass("act");
+
+                    Dom.PersonMain[i].pot.hide();
+                    Dom.PersonMain[i].pot2.show();
+                }else if(top1<=0){
+                    Dom.PersonMain[i].menu.removeClass("act");
+                    Dom.PersonMain[i].menu1.addClass("act");
+
+                    Dom.PersonMain[i].pot.hide();
+                    Dom.PersonMain[i].pot1.show();
+                }
+
+            });
+
+        }
 
         $(".Person").hide();
     },200);
@@ -193,43 +279,6 @@ init.word = ()=>{
 
 
 };
-
-// init.swiper = (year)=>{
-//     Dom.swiper = {};
-//     cc.m["Index"].show();
-//     Dom.swiper.HBox = new Swiper('#HBox', {
-//         direction: 'vertical',
-//         spaceBetween: 80,
-//         longSwipesRatio:0.3,
-//         on:{
-//             slideChangeTransitionEnd: function(){
-//
-//                 let ids = this.activeIndex;
-//                 $(".YearMenu").removeClass("act");
-//                 $(".YearMenuId"+ids).addClass("act");
-//                 Dom.swiper.DBList[ids].slideTo(0, 0, false);
-//
-//             }
-//         },
-//     });
-//
-//     Dom.swiper.DBList = [];
-//     for(let i in year){
-//         Dom.swiper.DBList[i] = new Swiper('.DBList'+year[i], {
-//             slidesPerView: 2,
-//             slidesPerColumn: 2,
-//             longSwipesRatio:0.3,
-//             spaceBetween: 30,
-//             pagination: {
-//                 el: '.swiper-pagination-box'+year[i],
-//                 clickable: true,
-//             },
-//         });
-//     }
-//
-//     cc.m["Index"].hide();
-//
-// };
 
 
 function jsGetAge(strBirthday){
