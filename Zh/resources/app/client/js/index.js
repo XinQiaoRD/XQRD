@@ -50,7 +50,9 @@ Room.Index.dom = ()=>{
 
 Room.Index.map = (i)=>{
     if(Dom.Index_btn) return;
+    if(Dom.Index_btn_now == i) return;
     Dom.Index_btn = 1;
+    Dom.Index_btn_now = i;
     $("#Index .map .map_act").velocity("stop");
     $("#Index .map .map_act"+Dom.Index_btn_act).velocity({ opacity: 0 }, { duration: 300} );
     $("#Index .map .map_act"+i).velocity({ opacity: 1 }, { duration: 300} );
@@ -82,14 +84,6 @@ Room.Index.map = (i)=>{
     },300);
 };
 
-// Room.Index.test = ()=>{
-//     Dom.Index_person_h = Dom.Index_person.virtualSize;
-//     let ls = $("#Index .person .pp.act li");
-//     if(!ls[2]) return;
-//     let l1 = $(ls[2]);
-//     console.log(l1.offset().top);
-//
-// };
 
 Room.Index.person = (id)=>{
     Dom._unable.show();

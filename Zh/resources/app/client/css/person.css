@@ -146,7 +146,75 @@
     padding-right: 50px;
 }
 
+.Person .main .ps{
+    position: relative;
+}
+
+.Person .main .ps1 .tit{
+    position: relative;
+    width: 1205px; height: 93px;
+    left: 0px; top: 0px;
+    background: url("../../../assets/img/person/ps1_tit.png") repeat-x;
+    overflow: hidden;
+}
+.Person .main .ps1 .tit .tbox{
+    position: relative; top: 20px;
+    font-size: 32px; font-weight: bold; color: #dc5750;
+    display: inline-block; padding: 8px 20px;
+    background-color: #f7f1ed;
+    margin-left: 50%;
+}
+
+.Person .main .ps1 .tinfo{
+    position: relative;
+    font-size: 18px; color: #6f573e;
+    line-height: 35px;
+    height: 240px; overflow: hidden;
+}
+
+.Person .main .ps1 .ps1_btn{
+    position: relative; background-color: #f7f1ed;
+    font-size: 18px; color: #dc5750;
+    width: 190px; text-align: center;
+    height: 40px; line-height: 40px;
+    margin-top: 30px; left: 43%;
+    margin-bottom: 35px;
+    overflow: hidden;
+}
+
+.Person .main .ps2 ul{
+    position: relative; width: 1305px; height: 100%;
+    overflow: hidden;
+}
+.Person .main .ps2 .ps2_box{
+    float: left; width: 518px; height: 150px;
+    border: 1px solid #d6cdb9;
+    padding: 30px; margin-right: 35px; margin-bottom: 35px;
+    overflow: hidden;
+}
+
+.Person .main .ps2 .ps2_box .ps2_box_tit{
+    font-size: 24px; color: #dc5750;
+}
+.Person .main .ps2 .ps2_box .hr{
+    display: block; overflow: hidden;
+    margin: 15px 0px;
+    height: 1px; background-color: #d6cdb9;
+}
+.Person .main .ps2 .ps2_box .ps2_box_info{
+    font-size: 16px; color: #666; line-height: 20px;
+    height: 57px; overflow: hidden;
+}
 
 
+.Person .main .ps3 .ps3_tinfo{
+    position: relative;
+    font-size: 18px; color: #6f573e;
+    line-height: 35px;
+}
 
-
+.Person .main .ps4 .ps4_tinfo{
+    position: relative;
+    font-size: 18px; color: #6f573e;
+    line-height: 35px;
+}

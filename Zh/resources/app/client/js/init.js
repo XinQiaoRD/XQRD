@@ -74,6 +74,9 @@ init.person = ()=>{
     let $CC = $("#CC");
     let num_cn = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
 
+    let View_Person_Word = _.template($("#View_Person_Word").html());
+    let word = Base.word;
+
     for(let i in person){
         let json = person[i].person;
         let area = Base.area_person[json.area_id];
@@ -83,8 +86,16 @@ init.person = ()=>{
         json.age = jsGetAge(json.birth);
         if(json.age>80 || json.age<10) json.age = "";
 
+        let person_word_html = "";
+        let pws = person[i].word;
+        for(let j in pws){
+            let json_word = word[pws[j]];
+            person_word_html += View_Person_Word(json_word);
+        }
+
         let Person_cc = View_Person(json);
         $CC.append(Person_cc);
+        $("#Person"+i+" .main .ps2_info").html(person_word_html);
     }
 
     Dom.PersonSwiper = {};
@@ -122,6 +133,23 @@ init.person = ()=>{
             Dom.PersonMain[i].h3 = Dom.PersonMain[i].ps3.height();
             Dom.PersonMain[i].h4 = Dom.PersonMain[i].ps4.height();
 
+            if(person[i].person.m_tit){
+                let tbox = Dom.PersonMain[i].ps1.find(".tbox");
+                tbox.css("left",-tbox.width()/2);
+            }else{
+                Dom.PersonMain[i].ps1.hide();
+
+                Dom.PersonMain[i].menu.removeClass("act");
+                Dom.PersonMain[i].menu2.addClass("act");
+
+                Dom.PersonMain[i].pot.hide();
+                Dom.PersonMain[i].pot2.show();
+
+                Dom.PersonMain[i].pot1_hide = 1;
+
+            }
+
+
             Dom.PersonSwiper[i] = new Swiper('#Person'+i+' .main .swiper-container', {
                 direction: 'vertical',
                 slidesPerView: 'auto',
@@ -135,7 +163,8 @@ init.person = ()=>{
             Dom.PersonMain[i].menu1.click(function(){
                 let id = $(this).data("id");
                 Dom.PersonSwiper[id].setTransition(500);
-                Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t1- Dom.PersonMain[i].h1 - 10));
+                Dom.PersonSwiper[id].setTranslate(- Dom.PersonMain[id].ps1.position().top);
+                //Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t1- Dom.PersonMain[i].h1 - 10));
 
                 Dom.PersonMain[id].menu.removeClass("act");
                 Dom.PersonMain[id].menu1.addClass("act");
@@ -146,7 +175,8 @@ init.person = ()=>{
             Dom.PersonMain[i].menu2.click(function(){
                 let id = $(this).data("id");
                 Dom.PersonSwiper[id].setTransition(500);
-                Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t2- Dom.PersonMain[i].h2 - 10));
+                Dom.PersonSwiper[id].setTranslate(- Dom.PersonMain[id].ps2.position().top - 30);
+                //Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t2- Dom.PersonMain[i].h2 - 10));
 
                 Dom.PersonMain[id].menu.removeClass("act");
                 Dom.PersonMain[id].menu2.addClass("act");
@@ -157,7 +187,8 @@ init.person = ()=>{
             Dom.PersonMain[i].menu3.click(function(){
                 let id = $(this).data("id");
                 Dom.PersonSwiper[id].setTransition(500);
-                Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t3- Dom.PersonMain[i].h3 - 10));
+                Dom.PersonSwiper[id].setTranslate(- Dom.PersonMain[id].ps3.position().top - 60);
+                //Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t3- Dom.PersonMain[i].h3 - 10));
 
                 Dom.PersonMain[id].menu.removeClass("act");
                 Dom.PersonMain[id].menu3.addClass("act");
@@ -168,7 +199,8 @@ init.person = ()=>{
             Dom.PersonMain[i].menu4.click(function(){
                 let id = $(this).data("id");
                 Dom.PersonSwiper[id].setTransition(500);
-                Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t4- Dom.PersonMain[i].h4 - 10));
+                Dom.PersonSwiper[id].setTranslate(- Dom.PersonMain[id].ps4.position().top - 100);
+                // console.log(Dom.PersonMain[id].ps4.position());
 
                 Dom.PersonMain[id].menu.removeClass("act");
                 Dom.PersonMain[id].menu4.addClass("act");
@@ -204,6 +236,9 @@ init.person = ()=>{
                     Dom.PersonMain[i].pot.hide();
                     Dom.PersonMain[i].pot2.show();
                 }else if(top1<=0){
+
+                    if(Dom.PersonMain[i].pot1_hide) return;
+
                     Dom.PersonMain[i].menu.removeClass("act");
                     Dom.PersonMain[i].menu1.addClass("act");
 

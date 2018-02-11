@@ -27,17 +27,19 @@
     <section class="cc" id="Index">
 
         <img class="logo" src="img/tit.png" alt="">
-        <div class="Head"></div>
+        <!--<div class="Head"></div>-->
 
         <div class="map">
-            <img class="map_act map_act1" src="../../assets/img/map/1.png" alt="">
-            <img class="map_act map_act2" src="../../assets/img/map/2.png" alt="">
-            <img class="map_act map_act3" src="../../assets/img/map/3.png" alt="">
-            <img class="map_act map_act4" src="../../assets/img/map/4.png" alt="">
-            <img class="map_act map_act5" src="../../assets/img/map/5.png" alt="">
-            <img class="map_act map_act6" src="../../assets/img/map/6.png" alt="">
-            <img class="map_act map_act7" src="../../assets/img/map/7.png" alt="">
-            <img class="map_act map_act8" src="../../assets/img/map/8.png" alt="">
+            <div class="map_box">
+                <img class="map_act map_act1" src="../../assets/img/map/1.png" alt="">
+                <img class="map_act map_act2" src="../../assets/img/map/2.png" alt="">
+                <img class="map_act map_act3" src="../../assets/img/map/3.png" alt="">
+                <img class="map_act map_act4" src="../../assets/img/map/4.png" alt="">
+                <img class="map_act map_act5" src="../../assets/img/map/5.png" alt="">
+                <img class="map_act map_act6" src="../../assets/img/map/6.png" alt="">
+                <img class="map_act map_act7" src="../../assets/img/map/7.png" alt="">
+                <img class="map_act map_act8" src="../../assets/img/map/8.png" alt="">
+            </div>
             <img class="map_pot" src="../../assets/img/map/pot.png" alt="">
         </div>
         <div class="map_btn">
@@ -186,18 +188,41 @@
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="ps1">
-                                    <img src="../../assets/img/person/tmp1.png" alt="">
+                                <div class="ps ps1">
+                                    <div class="tit">
+                                        <div class="tbox">{$m_tit}</div>
+                                    </div>
+                                    <div class="tinfo">
+                                        {$m_info}    　　
+                                    </div>
+                                    <div class="ps1_btn" data-id="{$id}">点击加载更多</div>
                                 </div>
-                                <div class="ps2">
-                                    <img src="../../assets/img/person/tmp2.png" alt="">
+                                <div class="ps ps2">
+                                    <div class="ps2_tit">
+                                        <img src="../../assets/img/person/ps2_tit.png" alt="">
+                                    </div>
+                                    <ul class="ps2_info">
+                                        <li class="ps2_box">
+                                            <span class="ps2_box_tit">李秀红：关于解决温州科技职业学院引进人才子女入托入学问题的再建议</span>
+                                            <div class="hr"></div>
+                                            <span class="ps2_box_info">如何使他们安心于当前的工作和生活，充分发挥各自的才华，解决他们的后顾之忧，是我们人大代表不得不考虑的问题。</span>
+                                        </li>
+                                    </ul>
+                                    <div style="height: 50px;"></div>
                                 </div>
-                                <div class="ps3">
-                                    <img src="../../assets/img/person/tmp3.png" alt="">
+                                <div class="ps ps3">
+                                    <div class="ps3_tit">
+                                        <img src="../../assets/img/person/ps3_tit.png" alt="">
+                                    </div>
+                                    <img class="ps3_null" src="../../assets/img/person/null.png" alt="">
                                 </div>
-                                <div class="ps4">
-                                    <img src="../../assets/img/person/tmp3.png" alt="">
+                                <div class="ps ps4">
+                                    <div class="ps4_tit">
+                                        <img src="../../assets/img/person/ps4_tit.png" alt="">
+                                    </div>
+                                    <img class="ps4_null" src="../../assets/img/person/null.png" alt="">
                                 </div>
+                                <div style="height: 130px;"></div>
                             </div>
                         </div>
                         <!-- Add Scroll Bar -->
@@ -208,6 +233,14 @@
                 <div class="cls" data-id="{$id}"></div>
             </div>
         </section>
+    </script>
+
+    <script type="text/template" id="View_Person_Word">
+        <li class="ps2_box _word_btn" data-id="{$id}">
+            <div class="ps2_box_tit">{$nm}：{$title}</div>
+            <div class="hr"></div>
+            <div class="ps2_box_info">{$desc_info}</div>
+        </li>
     </script>
 
 
@@ -222,7 +255,9 @@
                     <div class="act act3"></div>
                     <div class="left_bg"></div>
 
-                    <img src="../../uploads/person/{$photo}" alt="" class="photo">
+                    <div class="photo">
+                        <img src="../../uploads/person/{$photo}"  width="192" alt="">
+                    </div>
 
                     <div class="btn btn1" data-id="{$id}"></div>
                     <div class="btn btn2" data-id="{$id}"></div>
@@ -277,7 +312,7 @@
     <script type="text/template" id="View_index_person">
         <li class="_person" data-id="{$id}">
             <div class="head">
-                <img width="150" src="../../uploads/person/20180204103732424.jpg" alt="">
+                <img width="150" src="../../uploads/person/{$head}" alt="">
             </div>
             <div class="nm">{$nm}</div>
         </li>
