@@ -15,7 +15,7 @@
 </head>
 
 <body ondragstart="return false" onselect="return false" onselectstart="return false" oncontextmenu="return false">
-<div id="CC" style="transform:scale(0.9); transform-origin: top left;">
+<div id="CC">
 <!-- style="transform:scale(0.5); transform-origin: top left;" -->
     <div id="_unable"></div>
 
@@ -175,13 +175,13 @@
                 <div class="left">
                     <div class="left_bg"></div>
                     <div class="menu menu1 act" data-id="{$id}">代表风采</div>
-                    <div class="menu menu2" data-id="{$id}">提案</div>
+                    <div class="menu menu2" data-id="{$id}">建议或议案&nbsp;&nbsp;<br><span style="font-size: 14px;">（包括答复及落实情况）</span></div>
                     <div class="menu menu3" data-id="{$id}">社会活动</div>
-                    <div class="menu menu4" data-id="{$id}">会议</div>
+                    <div style="display: none!important;" class="menu menu4" data-id="{$id}">会议</div>
                     <div class="pot pot1"></div>
                     <div class="pot pot2"></div>
                     <div class="pot pot3"></div>
-                    <div class="pot pot4"></div>
+                    <div style="display: none!important;" class="pot pot4"></div>
                 </div>
 
                 <div class="main">
@@ -203,9 +203,11 @@
                                     </div>
                                     <ul class="ps2_info">
                                         <li class="ps2_box">
-                                            <span class="ps2_box_tit">李秀红：关于解决温州科技职业学院引进人才子女入托入学问题的再建议</span>
-                                            <div class="hr"></div>
-                                            <span class="ps2_box_info">如何使他们安心于当前的工作和生活，充分发挥各自的才华，解决他们的后顾之忧，是我们人大代表不得不考虑的问题。</span>
+                                            <div class="ps2_boxT">
+                                                <span class="ps2_box_tit">李秀红：关于解决温州科技职业学院引进人才子女入托入学问题的再建议</span>
+                                                <div class="hr"></div>
+                                                <span class="ps2_box_info">如何使他们安心于当前的工作和生活，充分发挥各自的才华，解决他们的后顾之忧，是我们人大代表不得不考虑的问题。</span>
+                                            </div>
                                         </li>
                                     </ul>
                                     <div style="height: 50px;"></div>
@@ -216,7 +218,7 @@
                                     </div>
                                     <img class="ps3_null" src="../../assets/img/person/null.png" alt="">
                                 </div>
-                                <div class="ps ps4">
+                                <div class="ps ps4" style="display: none!important;">
                                     <div class="ps4_tit">
                                         <img src="../../assets/img/person/ps4_tit.png" alt="">
                                     </div>
@@ -237,9 +239,11 @@
 
     <script type="text/template" id="View_Person_Word">
         <li class="ps2_box _word_btn" data-id="{$id}">
-            <div class="ps2_box_tit">{$nm}：{$title}</div>
-            <div class="hr"></div>
-            <div class="ps2_box_info">{$desc_info}</div>
+            <div class="ps2_boxT">
+                <div class="ps2_box_tit">{$nm}：{$title}</div>
+                <div class="hr"></div>
+                <div class="ps2_box_info">{$desc_info}</div>
+            </div>
         </li>
     </script>
 
@@ -268,7 +272,7 @@
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="tit">李秀红代表：</div>
+                                <div class="tit">{$nm}代表：</div>
                                 <div class="m_info">{$word_info}</div>
                             </div>
                         </div>

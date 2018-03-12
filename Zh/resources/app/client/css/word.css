@@ -16,9 +16,10 @@
     width: 1398px; height: 146px;
     left: 100px; top: 0px;
 
-    font-size: 44px; color: #6f573e;
+    font-size: 36px; color: #dc5750;
+    /*color: #6f573e;*/
     text-align: left;
-
+    font-family: "黑体";
     display: flex;
     align-items: center;
 }
@@ -73,7 +74,7 @@
 }
 
 .Word .main .tit {
-    font-size: 32px; color: #dc5750;
+    font-size: 32px; color: #6f573e;
     text-align: center;
     margin-bottom: 42px;
 }

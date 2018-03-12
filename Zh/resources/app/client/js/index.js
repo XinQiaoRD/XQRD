@@ -17,27 +17,35 @@ Room.Index.dom = ()=>{
     Room.Index.map(1);
 
     $$("#Index .map_btn .btn1").click(function(){
+        $$("#Index .person .tit").html("第一选区");
         Room.Index.map(1);
     });
     $$("#Index .map_btn .btn2").click(function(){
+        $$("#Index .person .tit").html("第二选区");
         Room.Index.map(2);
     });
     $$("#Index .map_btn .btn3").click(function(){
+        $$("#Index .person .tit").html("第三选区");
         Room.Index.map(3);
     });
     $$("#Index .map_btn .btn4").click(function(){
+        $$("#Index .person .tit").html("第四选区");
         Room.Index.map(4);
     });
     $$("#Index .map_btn .btn5").click(function(){
+        $$("#Index .person .tit").html("第五选区");
         Room.Index.map(5);
     });
     $$("#Index .map_btn .btn6").click(function(){
+        $$("#Index .person .tit").html("第六选区");
         Room.Index.map(6);
     });
     $$("#Index .map_btn .btn7").click(function(){
+        $$("#Index .person .tit").html("第七选区");
         Room.Index.map(7);
     });
     $$("#Index .map_btn .btn8").click(function(){
+        $$("#Index .person .tit").html("第八选区");
         Room.Index.map(8);
     });
 

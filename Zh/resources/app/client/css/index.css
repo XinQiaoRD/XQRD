@@ -9,8 +9,8 @@
     z-index: 91; opacity: 0.15;
 }
 #Index .logo{
-    position: absolute; width: 493px; height: 60px;
-    left: 715px; top:50px;
+    position: absolute; width: 732px; height: 60px;
+    left: 580px; top:50px;
     z-index: 999
 }
 #Index .Head{
@@ -218,11 +218,11 @@
 }
 
 #Index .com{
-    position: absolute; bottom: 40px; left: 160px;
+    position: absolute; bottom: 90px; left: 160px;
     background: rgba(255,255,255,0.7);
-    padding: 25px;
+    padding: 25px; padding-right: 10px;
     font-size: 18px; color: #6f573e;
-    min-height: 150px; width: 150px;
+    min-height: 150px; width: 165px;
 }
 
 #Index .com .tit{
@@ -251,7 +251,8 @@
     position: relative; left: 40px;
     background: url("../../../assets/img/tit_box.png") no-repeat;
     line-height: 60px; text-align: center;
-    font-size: 48px; font-family: myFont; color: #6f573e;
+    font-size: 43px;  color: #6f573e;
+    /*font-family: myFont;*/
 }
 #Index .person .num{
     text-align: center;

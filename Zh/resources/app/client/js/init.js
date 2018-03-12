@@ -109,29 +109,29 @@ init.person = ()=>{
             Dom.PersonMain[i].ps1 = Dom.PersonMain[i].m.find(".ps1");
             Dom.PersonMain[i].ps2 = Dom.PersonMain[i].m.find(".ps2");
             Dom.PersonMain[i].ps3 = Dom.PersonMain[i].m.find(".ps3");
-            Dom.PersonMain[i].ps4 = Dom.PersonMain[i].m.find(".ps4");
+            // Dom.PersonMain[i].ps4 = Dom.PersonMain[i].m.find(".ps4");
 
             Dom.PersonMain[i].menu = $('#Person'+i+' .left .menu');
             Dom.PersonMain[i].menu1 = $('#Person'+i+' .left .menu1');
             Dom.PersonMain[i].menu2 = $('#Person'+i+' .left .menu2');
             Dom.PersonMain[i].menu3 = $('#Person'+i+' .left .menu3');
-            Dom.PersonMain[i].menu4 = $('#Person'+i+' .left .menu4');
+            // Dom.PersonMain[i].menu4 = $('#Person'+i+' .left .menu4');
 
             Dom.PersonMain[i].pot = $('#Person'+i+' .left .pot');
             Dom.PersonMain[i].pot1 = $('#Person'+i+' .left .pot1');
             Dom.PersonMain[i].pot2 = $('#Person'+i+' .left .pot2');
             Dom.PersonMain[i].pot3 = $('#Person'+i+' .left .pot3');
-            Dom.PersonMain[i].pot4 = $('#Person'+i+' .left .pot4');
+            // Dom.PersonMain[i].pot4 = $('#Person'+i+' .left .pot4');
 
             Dom.PersonMain[i].t1 = Dom.PersonMain[i].ps1.offset().top;
             Dom.PersonMain[i].t2 = Dom.PersonMain[i].ps2.offset().top;
             Dom.PersonMain[i].t3 = Dom.PersonMain[i].ps3.offset().top;
-            Dom.PersonMain[i].t4 = Dom.PersonMain[i].ps4.offset().top;
+            // Dom.PersonMain[i].t4 = Dom.PersonMain[i].ps4.offset().top;
 
             Dom.PersonMain[i].h1 = Dom.PersonMain[i].ps1.height();
             Dom.PersonMain[i].h2 = Dom.PersonMain[i].ps2.height();
             Dom.PersonMain[i].h3 = Dom.PersonMain[i].ps3.height();
-            Dom.PersonMain[i].h4 = Dom.PersonMain[i].ps4.height();
+            // Dom.PersonMain[i].h4 = Dom.PersonMain[i].ps4.height();
 
             if(person[i].person.m_tit){
                 let tbox = Dom.PersonMain[i].ps1.find(".tbox");
@@ -187,7 +187,7 @@ init.person = ()=>{
             Dom.PersonMain[i].menu3.click(function(){
                 let id = $(this).data("id");
                 Dom.PersonSwiper[id].setTransition(500);
-                Dom.PersonSwiper[id].setTranslate(- Dom.PersonMain[id].ps3.position().top - 60);
+                Dom.PersonSwiper[id].setTranslate(- Dom.PersonMain[id].ps3.position().top - 30);
                 //Dom.PersonSwiper[id].setTranslate(- (Dom.PersonMain[i].t3- Dom.PersonMain[i].h3 - 10));
 
                 Dom.PersonMain[id].menu.removeClass("act");
@@ -196,18 +196,18 @@ init.person = ()=>{
                 Dom.PersonMain[id].pot.hide();
                 Dom.PersonMain[id].pot3.show();
             });
-            Dom.PersonMain[i].menu4.click(function(){
-                let id = $(this).data("id");
-                Dom.PersonSwiper[id].setTransition(500);
-                Dom.PersonSwiper[id].setTranslate(- Dom.PersonMain[id].ps4.position().top - 100);
-                // console.log(Dom.PersonMain[id].ps4.position());
-
-                Dom.PersonMain[id].menu.removeClass("act");
-                Dom.PersonMain[id].menu4.addClass("act");
-
-                Dom.PersonMain[id].pot.hide();
-                Dom.PersonMain[id].pot4.show();
-            });
+            // Dom.PersonMain[i].menu4.click(function(){
+            //     let id = $(this).data("id");
+            //     Dom.PersonSwiper[id].setTransition(500);
+            //     Dom.PersonSwiper[id].setTranslate(- Dom.PersonMain[id].ps4.position().top - 100);
+            //     // console.log(Dom.PersonMain[id].ps4.position());
+            //
+            //     Dom.PersonMain[id].menu.removeClass("act");
+            //     Dom.PersonMain[id].menu4.addClass("act");
+            //
+            //     Dom.PersonMain[id].pot.hide();
+            //     Dom.PersonMain[id].pot4.show();
+            // });
 
             Dom.PersonSwiper[i].on('progress', function(progress){
                 let x = 418;
@@ -215,15 +215,16 @@ init.person = ()=>{
                 let top1 = parseInt( Dom.PersonMain[i].ps1.offset().top - Dom.PersonMain[i].h1 - y );
                 let top2 = parseInt( Dom.PersonMain[i].ps2.offset().top - Dom.PersonMain[i].h2 - y );
                 let top3 = parseInt( Dom.PersonMain[i].ps3.offset().top - Dom.PersonMain[i].h3 - y );
-                let top4 = parseInt( Dom.PersonMain[i].ps4.offset().top - Dom.PersonMain[i].h4 - y );
+                // let top4 = parseInt( Dom.PersonMain[i].ps4.offset().top - Dom.PersonMain[i].h4 - y );
 
-                if(top4<=0){
-                    Dom.PersonMain[i].menu.removeClass("act");
-                    Dom.PersonMain[i].menu4.addClass("act");
-
-                    Dom.PersonMain[i].pot.hide();
-                    Dom.PersonMain[i].pot4.show();
-                }else if(top3<=0){
+                // if(top4<=0){
+                //     Dom.PersonMain[i].menu.removeClass("act");
+                //     Dom.PersonMain[i].menu4.addClass("act");
+                //
+                //     Dom.PersonMain[i].pot.hide();
+                //     Dom.PersonMain[i].pot4.show();
+                // }else
+                if(top3<=0){
                     Dom.PersonMain[i].menu.removeClass("act");
                     Dom.PersonMain[i].menu3.addClass("act");
 
