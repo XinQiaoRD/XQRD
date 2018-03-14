@@ -31,6 +31,8 @@ init.view = ()=>{
 //首页人大代表
 init.index_person = ()=>{
 
+    $("#Index .person .num").html("选民数："+Base.area_person["1"].num);
+
     var View_index_person = _.template($("#View_index_person").html());
 
     for(let i in Base.area_person){
@@ -135,7 +137,7 @@ init.person = ()=>{
 
             if(person[i].person.m_tit){
                 let tbox = Dom.PersonMain[i].ps1.find(".tbox");
-                tbox.css("left",-tbox.width()/2);
+                tbox.css("left",(1205/2)-tbox.width()/2-40);
             }else{
                 Dom.PersonMain[i].ps1.hide();
 

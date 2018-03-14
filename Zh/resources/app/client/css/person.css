@@ -166,7 +166,7 @@
     font-size: 32px; font-weight: bold; color: #dc5750;
     display: inline-block; padding: 8px 20px;
     background-color: #f7f1ed;
-    margin-left: 50%;
+    /*margin-left: 50%;*/
 }
 
 .Person .main .ps1 .tinfo{
