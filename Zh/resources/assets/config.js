@@ -12,3 +12,5 @@ zh.conf.com = {
     "c7":["西湖社区<br>(西湖村、山水名都)"],
     "c8":["省第十一地质大队","温州科技职业学院"]
 };
+
+zh.conf.web = "http://dblz.zjrd.gov.cn/dbllz/99878F2C1F00B259/Default.aspx?id=5B150CF05488833AE0531CBEA9C01AEE";

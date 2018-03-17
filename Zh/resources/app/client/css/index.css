@@ -1,6 +1,74 @@
 ﻿@charset "utf-8";
 @font-face{ font-family:'myFont'; src: url('../../../assets/font/RTWSShangYaDemo-Regular.otf'); }
 
+._link{
+    position: absolute;
+    width: 450px; height: 88px;
+    left: 1310px; top: 912px;
+    background: url("../../../assets/img/link.png") no-repeat;
+}
+
+/*Start*/
+#Start{
+    background: url("../../../assets/img/start/bg.jpg") no-repeat;
+}
+#Start .tit{
+    position: absolute; width: 613px; height: 60px;
+    left: 654px; top:80px;
+    background: url("../img/tit_0.png") no-repeat;
+}
+#Start .box{
+    position: absolute; width: 1600px; height: 487px;
+    left: 160px; top:373px;
+    background: url("../../../assets/img/start/box.png") no-repeat;
+}
+#Start .box .boxW{
+    position: absolute; width: 720px; height: 367px;
+    left: 841px; top:77px;
+    overflow: hidden;
+}
+#Start .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+#Start .swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 30px;
+}
+#Start .box .info{
+    color: #6f573e; font-size: 18px;
+    text-align:justify; line-height: 33px;
+}
+
+#Start .pic{
+    position: absolute; width: 684px; height: 684px;
+    left: 200px; top:263px;
+    background: url("../../../assets/img/start/pic.png") no-repeat;
+}
+
+#Start .next{
+    position: absolute; width: 967px; height: 280px;
+    left: 477px; top:940px;
+    background: url("../../../assets/img/next.png") no-repeat;
+}
+#Start .next_pot{
+    position: absolute; width: 48px; height: 43px;
+    left: 936px; top:966px;
+    background: url("../../../assets/img/next_pot.png") no-repeat;
+}
+#Start .next_w{
+    position: absolute; left: 750px; top:1030px;
+    color: #fff; text-shadow:2px 2px 0px #777;
+    font-size: 23px;
+}
+#Start .next_btn{
+    position: absolute; width: 896px; height: 221px;
+    left: 414px; top:859px;
+    z-index: 9999;
+}
+
 /*Index*/
 #Index{}
 #bgv{
@@ -292,11 +360,52 @@
     padding-right: 50px;
 }
 
-
-#Index .link{
-    position: absolute;
-    width: 450px; height: 88px;
-    left: 1310px; top: 912px;
-    background: url("../../../assets/img/link.png") no-repeat;
+#Index .next{
+    position: absolute; width: 967px; height: 280px;
+    left: 477px; top:940px;
+    background: url("../../../assets/img/next.png") no-repeat;
+}
+#Index .next_pot{
+    position: absolute; width: 48px; height: 43px;
+    left: 936px; top:966px;
+    background: url("../../../assets/img/next_pot.png") no-repeat;
+}
+#Index .next_w{
+    position: absolute; left: 750px; top:1030px;
+    color: #fff; text-shadow:2px 2px 0px #777;
+    font-size: 23px;
+}
+#Index .next_btn{
+    position: absolute; width: 896px; height: 221px;
+    left: 414px; top:859px;
+    z-index: 9999;
 }
 
+
+/*#Index .link{*/
+    /*position: absolute;*/
+    /*width: 450px; height: 88px;*/
+    /*left: 1310px; top: 912px;*/
+    /*background: url("../../../assets/img/link.png") no-repeat;*/
+/*}*/
+#Web{
+    background: inherit;
+    z-index: 9;
+}
+#Web .bg{
+    width: 100%; height: 100%;
+    background-color: #000; opacity: 0.7;
+}
+#Web .web{
+    position: absolute; top: 40px; left: 400px;
+    width: 1200px; height: 1100px;
+}
+#Web .cls{
+    position: absolute; top: 40px; left: 1760px;
+    width: 80px; height: 80px;
+    background: url("../../../assets/img/start/cls.png") no-repeat;
+}
+#Web .code{
+    position: absolute; top: 830px; left: 75px;
+    width: 200px; height: 200px;
+}

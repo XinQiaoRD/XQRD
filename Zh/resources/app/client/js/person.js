@@ -66,7 +66,7 @@ Room.Person.going= ()=>{
 
 Room.Person.back = (id)=>{
     Dom._unable.show();
-    cc.ppt([cc.id, "Index", "Person"] , (after)=>{
+    cc.ppt([cc.id, "Index", "Person", "X"] , (after)=>{
         cc.m[cc.old].velocity({ opacity: 0 }, { duration: 300, display:"none", complete:()=>{
                 Dom._unable.hide();
             }});

@@ -15,13 +15,50 @@
 </head>
 
 <body ondragstart="return false" onselect="return false" onselectstart="return false" oncontextmenu="return false">
-<div id="CC">
+<div id="CC" style="transform:scale(0.9); transform-origin: top left;">
 <!-- style="transform:scale(0.5); transform-origin: top left;" -->
     <div id="_unable"></div>
 
     <section class="cc" id="Loader">
         <img src="../../assets/img/loader.svg" width="88" alt="">
         <div class="word"></div>
+    </section>
+
+    <section class="cc" id="Web">
+        <div class="bg"></div>
+        <webview id="_web" class="web" src=""></webview>
+        <div class="cls"></div>
+        <img src="../../assets/img/code.png" alt="" class="code">
+    </section>
+
+    <section class="cc" id="Start">
+        <div class="tit"></div>
+
+        <div class="next"></div>
+        <div class="next_pot"></div>
+        <div class="next_w">向下拖动-进入人大代表联系选区示意图</div>
+        <div class="next_btn"></div>
+
+        <div class="box">
+            <div class="boxW">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="info"></div>
+                        </div>
+                    </div>
+                    <!-- Add Scroll Bar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pic"></div>
+
+        <div class="_link"></div>
+
+
     </section>
 
     <section class="cc" id="Index">
@@ -86,6 +123,11 @@
 
         </div>
 
+        <div class="next"></div>
+        <div class="next_pot"></div>
+        <div class="next_w">向下拖动-进入人大代表联络站介绍</div>
+        <div class="next_btn"></div>
+
         <div class="com">
             <div class="tit"></div>
             <ul class="cs c1"></ul>
@@ -121,7 +163,7 @@
             </div>
         </div>
 
-        <div class="link"></div>
+        <div class="_link"></div>
 
     </section>
 
@@ -332,6 +374,8 @@
 <script src="lib/velocity/velocity.js"></script>
 
 <script src="lib/swiper/dist/js/swiper.js"></script>
+<script>window.Hammer = require('hammerjs');</script>
+<script src="lib/hammer/hammer_hand.js"></script>
 
 <script src="lib/zh.js"></script>
 <!--主程序-->
@@ -346,11 +390,27 @@
 <script src="js/word.js"></script>
 
 <script>
-    $(window).load(()=>init.loader());
+    // const {shell} = require("electron");
+    const webview = document.getElementById("_web");
+    webview.addEventListener('new-window', (e)=>{
+        // const protocol = require("url").parse(e.url).protocol;
+        // console.log(e.url);
+        webview.loadURL(e.url);
+        // if(protocol === 'http:' || protocol==='https:'){
+        //     window.open(e.url)
+        // }
+    });
+
+    $(window).load(()=>{
+        init.loader();
+    });
     document.getElementById("CC").addEventListener('touchmove', function(event){
         event.preventDefault();
         event.stopPropagation();
     });
+
+
+
 </script>
 
 </html>

@@ -9,7 +9,9 @@ init.loader = ()=>{
 init.view = ()=>{
     zh.ini();
     $("#Index").show();
+    $("#Start").show();
 
+    init.start();
     init.com();
     init.index_person();
 
@@ -19,12 +21,32 @@ init.view = ()=>{
     setTimeout(function(){
         zh.ini();
         $("#Index").hide();
+        $("#Start").hide();
 
         zh.do();
         setTimeout(Room.Loader.ppt , 500);
     },300);
 
 
+
+};
+
+//联络站介绍
+init.start = ()=>{
+    $("#Start .box .swiper-slide .info ").html(Base.start);
+    $("#Web .web").attr("src", zh.conf.web);
+
+    setTimeout(function(){
+        new Swiper('#Start .box .swiper-container', {
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            freeMode: true,
+            scrollbar: {
+                el: '#Start .box .swiper-scrollbar',
+            },
+            mousewheel: true,
+        });
+    } , 100);
 
 };
 

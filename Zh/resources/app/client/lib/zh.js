@@ -87,7 +87,7 @@ cc.ppt = (id, transition, callback)=>{
                 if(Room[id[1]].coming) Room[id[1]].coming(come_para);
                 transition(after, go_para, come_para);
             }
-        }, go_after);
+        });
     }else{
         if(Room[id[1]].come_before) {
             Room[id[1]].come_before(()=>{
