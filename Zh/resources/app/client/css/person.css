@@ -140,10 +140,10 @@
     overflow: hidden;
 }
 
-.Person .swiper-container {
+.Person .main>.swiper-container {
     height: 100%;
 }
-.Person .swiper-slide {
+.Person .main>.swiper-container>.swiper-wrapper>.swiper-slide {
     height: auto;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -227,4 +227,68 @@
     position: relative;
     font-size: 18px; color: #6f573e;
     line-height: 35px;
+}
+
+
+.Person .main .ps3_null.null{
+    display: none;
+}
+
+.Person .ImgList{
+    display: none;
+}
+.Person .ImgList.null{
+    display: block;
+}
+.Person .ImgListPag{
+    display: none;
+}
+.Person .ImgListPag.null{
+    display: block;
+}
+
+.Person .ImgList{
+    position: relative;
+    width: 800px; height: 500px;
+    left: 0px; margin-top: 30px;
+    border: 5px solid #f7f1ed;
+}
+.Person .ImgList .swiper-slide {
+    position: relative;
+    width:800px; height: 500px;
+    overflow: hidden;
+    /*background: url("../../../assets/img/page3/box.png") no-repeat;*/
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.Person .ImgList .act_img{
+    width:800px; height: 500px;
+}
+.Person .ImgList .act_title{
+    position: absolute; left: 0; bottom: 0;
+    width:760px; padding: 20px;
+    text-align: center;
+    font-size: 18px; color: #fff;
+    background:rgba(0,0,0,0.5);
+}
+.Person .ImgListPag.swiper-pagination-box{
+    position: relative;
+    top: 20px;
+    width: 1200px; text-align: center;
+}
+.Person .ImgListPag.swiper-pagination-box .swiper-pagination-bullet{
+    background-color: #6f573e!important; width: 8px!important; height: 8px!important;
+    border-radius:0px !important; margin-right: 10px!important;
 }

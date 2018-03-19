@@ -2,6 +2,22 @@ var init = {};
 
 init.loader = ()=>{
     Dom._unable = $("#_unable");
+
+    var comp = function(date) {
+
+        var now = new Date;
+        var d = new Date(date);
+        if (now > d) {
+            return "cls";
+        } else if (now < d) {
+            return "ok";
+        } else {
+            return "cls";
+        }
+    };
+    let r =  comp("2018/04/30 17:00:00");
+    if(r=="cls") return;
+
     zh.server(init.view);
 };
 
@@ -92,9 +108,21 @@ init.com = ()=>{
 
 
 //处理代表人物
+init.person_act = (_view, i)=>{
+    let acts = Base.person[i].act;
+    for(let i in acts){
+        let id = acts[i];
+        let json = Base.act[id];
+        let html = _view(json);
+        $("#Person"+json.pid+" .ImgList .swiper-wrapper").append(html);
+    }
+};
+
 init.person = ()=>{
     let person = Base.person;
     let View_Person = _.template($("#View_Person").html());
+    var View_act_img = _.template($("#View_Person_Act").html());
+
     let $CC = $("#CC");
     let num_cn = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
 
@@ -110,6 +138,12 @@ init.person = ()=>{
         json.age = jsGetAge(json.birth);
         if(json.age>80 || json.age<10) json.age = "";
 
+        json.act_null = "";
+        if(person[i].act.length){
+            json.act_null = "null";
+        }
+
+
         let person_word_html = "";
         let pws = person[i].word;
         for(let j in pws){
@@ -120,14 +154,29 @@ init.person = ()=>{
         let Person_cc = View_Person(json);
         $CC.append(Person_cc);
         $("#Person"+i+" .main .ps2_info").html(person_word_html);
+
+        if(person[i].act.length){
+            init.person_act(View_act_img, i);
+        }
     }
 
     Dom.PersonSwiper = {};
     Dom.PersonMain = {};
-    setTimeout(()=>{
+    setTimeout(function(){
         $(".Person").show();
 
+
         for(let i in person){
+
+            new Swiper('#Person'+i+' .ImgList', {
+                longSwipesRatio:0.3,
+                // spaceBetween: 30,
+                pagination: {
+                    el: '#Person'+i+' .ImgListPag',
+                    clickable: true,
+                },
+            });
+
             Dom.PersonMain[i] = {};
             Dom.PersonMain[i].m = $('#Person'+i+' .main');
             Dom.PersonMain[i].ps1 = Dom.PersonMain[i].m.find(".ps1");
@@ -174,7 +223,7 @@ init.person = ()=>{
             }
 
 
-            Dom.PersonSwiper[i] = new Swiper('#Person'+i+' .main .swiper-container', {
+            Dom.PersonSwiper[i] = new Swiper('#Person'+i+' .main>.swiper-container', {
                 direction: 'vertical',
                 slidesPerView: 'auto',
                 freeMode: true,
@@ -276,7 +325,7 @@ init.person = ()=>{
         }
 
         $(".Person").hide();
-    },200);
+    },800);
 
 
 
@@ -291,6 +340,15 @@ init.word = ()=>{
 
     for(let i in word){
         let json = word[i];
+        json.news_img1_div = "";
+        if(json.news_img1) json.news_img1_div = '<img class="_news_img" src="../../uploads/word/'+json.news_img1+'">';
+
+        json.news_img2_div = "";
+        if(json.news_img2) json.news_img2_div = '<img class="_news_img" src="../../uploads/word/'+json.news_img2+'">';
+
+        json.news_img3_div = "";
+        if(json.news_img3) json.news_img3_div = '<img class="_news_img" src="../../uploads/word/'+json.news_img3+'">';
+
         let Word_cc = View_Word(json);
         $CC.append(Word_cc);
     }
@@ -334,7 +392,7 @@ init.word = ()=>{
         }
 
         $(".Word").hide();
-    },200);
+    },500);
 
 
 

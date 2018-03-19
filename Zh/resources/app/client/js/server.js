@@ -17,4 +17,22 @@ Download.down = function(){
         if(rs.photo) Server.save(serv , local, rs.photo, rs.photo_size);
     }
 
+    serv = zh.conf.server+"/uploads/word/";
+    local = Url.fs+"uploads/word/";
+
+    for(var i in Base.word){
+        var rs = Base.word[i];
+        if(rs.news_img1) Server.save(serv , local, rs.news_img1, rs.news_img1_size);
+        if(rs.news_img2) Server.save(serv , local, rs.news_img2, rs.news_img2_size);
+        if(rs.news_img3) Server.save(serv , local, rs.news_img3, rs.news_img3_size);
+    }
+
+    serv = zh.conf.server+"/uploads/act/";
+    local = Url.fs+"uploads/act/";
+
+    for(var i in Base.act){
+        var rs = Base.act[i];
+        if(rs.pic) Server.save(serv , local, rs.pic, rs.pic_size);
+    }
+
 };

@@ -100,3 +100,7 @@
     box-sizing: border-box;
     padding-right: 50px;
 }
+
+.Word ._news_img{
+    max-width: 800px;
+}

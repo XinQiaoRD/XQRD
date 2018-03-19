@@ -116,7 +116,7 @@ Room.Index.ppt_back = ()=>{
     Dom._unable.show();
     cc.ppt([cc.id, "Start"] , (after)=>{
         cc.m[cc.old].velocity({ translateY:[-1080,0] }, { duration: 300, display:"none", delay:50});
-        cc.m[ "Start"].velocity({ translateY:1080 }, 0 ).show().velocity({ translateY:[0,1000] }, { duration: 300, complete:()=>{
+        cc.m[ "Start"].velocity({ translateY:1080 }, 0 ).show().velocity({ translateY:[0,1080] }, { duration: 300, complete:()=>{
                 after.come();
             }});
     });
@@ -175,7 +175,7 @@ Room.Start.ppt = ()=>{
     Dom._unable.show();
     cc.ppt([cc.id, "Index"] , (after)=>{
         cc.m[cc.old].velocity({ translateY:[-1080,0] }, { duration: 300, display:"none", delay:50});
-        cc.m[ "Index"].velocity({ translateY:1080 }, 0 ).show().velocity({ translateY:[0,1000] }, { duration: 300, complete:()=>{
+        cc.m[ "Index"].velocity({ translateY:1080 }, 0 ).show().velocity({ translateY:[0,1080] }, { duration: 300, complete:()=>{
                 after.come();
             }});
     });

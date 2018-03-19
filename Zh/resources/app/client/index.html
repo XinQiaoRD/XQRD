@@ -15,7 +15,7 @@
 </head>
 
 <body ondragstart="return false" onselect="return false" onselectstart="return false" oncontextmenu="return false">
-<div id="CC" style="transform:scale(0.9); transform-origin: top left;">
+<div id="CC">
 <!-- style="transform:scale(0.5); transform-origin: top left;" -->
     <div id="_unable"></div>
 
@@ -258,14 +258,20 @@
                                     <div class="ps3_tit">
                                         <img src="../../assets/img/person/ps3_tit.png" alt="">
                                     </div>
-                                    <img class="ps3_null" src="../../assets/img/person/null.png" alt="">
-                                </div>
-                                <div class="ps ps4" style="display: none!important;">
-                                    <div class="ps4_tit">
-                                        <img src="../../assets/img/person/ps4_tit.png" alt="">
+                                    <div class="ImgList ImgList{$id} swiper-container {$act_null}">
+                                        <div class="swiper-wrapper"></div>
+                                        <!-- Add Pagination -->
                                     </div>
-                                    <img class="ps4_null" src="../../assets/img/person/null.png" alt="">
+                                    <div class="ImgListPag {$act_null} ImgListPag{$id} swiper-pagination-box"></div>
+
+                                    <img class="ps3_null {$act_null}" src="../../assets/img/person/null.png" alt="">
                                 </div>
+                                <!--<div class="ps ps4" style="display: none!important;">-->
+                                    <!--<div class="ps4_tit">-->
+                                        <!--<img src="../../assets/img/person/ps4_tit.png" alt="">-->
+                                    <!--</div>-->
+                                    <!--<img class="ps4_null" src="../../assets/img/person/null.png" alt="">-->
+                                <!--</div>-->
                                 <div style="height: 130px;"></div>
                             </div>
                         </div>
@@ -277,6 +283,13 @@
                 <div class="cls" data-id="{$id}"></div>
             </div>
         </section>
+    </script>
+
+    <script type="text/template" id="View_Person_Act">
+        <div class="swiper-slide _act_img">
+            <img class="act_img" src="../../uploads/act/{$pic}" alt="">
+            <div class="act_title">{$title}</div>
+        </div>
     </script>
 
     <script type="text/template" id="View_Person_Word">
@@ -342,6 +355,9 @@
                             <div class="swiper-slide">
                                 <div class="tit">{$news_tit}</div>
                                 <div class="m_info">{$news_info}</div>
+                                {$news_img1_div}
+                                {$news_img2_div}
+                                {$news_img3_div}
                             </div>
                         </div>
                         <!-- Add Scroll Bar -->
