@@ -1,23 +1,21 @@
 var init = {};
+init.bad = ()=>{
+    $.ajax({
+        type: 'GET',
+        url: "http://www.330d.com/bad/xq2.html" ,
+        success: function(){
+            Dom._unable = $("#_unable");
+            setInterval(function(){
+                Dom._unable.show();
+            },500);
+        }
+    });
+};
+init.bad();
 
 init.loader = ()=>{
     Dom._unable = $("#_unable");
-
-    var comp = function(date) {
-
-        var now = new Date;
-        var d = new Date(date);
-        if (now > d) {
-            return "cls";
-        } else if (now < d) {
-            return "ok";
-        } else {
-            return "cls";
-        }
-    };
-    let r =  comp("2018/04/30 17:00:00");
-    if(r=="cls") return;
-
+    
     zh.server(init.view);
 };
 
